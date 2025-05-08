@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="root"></div>
+</body>
+<script src="react.production.min.js"></script>
+<!-- // Element를 생성하고 Event listener를 더하는 것을 도와준다. ReactJS가 Interactive PO₩ER를 가지고 있는거다-->
+<script src="react-dom.production.min.js"></script>
+<!-- // React Element 들을 가져다가 HTML로 바꿔준다.-->
+<script src="babel.min.js"></script>
+<script type="text/babel">
+    const root = document.getElementById("root");
+    function App() {
+        const [counter, setCounter] = React.useState(0);
+        const onClick = () => {
+            setCounter((current) => current + 1);
+        }
+        return (
+            <div className="container">
+                <h3>Total clicks: {counter}</h3>
+                <button onClick={onClick}>Click me!</button>
+            </div>
+        );
+    }
+
+    ReactDOM.render(<App/>, root);
+</script>
+</html>

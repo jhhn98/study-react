@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<body>
+<div id="root"></div>
+</body>
+<script src="react.production.min.js"></script>
+<!-- // Element를 생성하고 Event listener를 더하는 것을 도와준다. ReactJS가 Interactive PO₩ER를 가지고 있는거다-->
+<script src="react-dom.production.min.js"></script>
+<!-- // React Element 들을 가져다가 HTML로 바꿔준다.-->
+<script>
+    const root = document.getElementById("root");
+    const h3 = React.createElement(
+        "h3",
+        {
+            id: "sexy-h3",
+            style: {
+                color: "#ff6347",
+                fontWeight: "bold"
+            },
+            onMouseEnter: () => console.log("Mouse enter")
+        },
+        "Hello I'm a h3"
+    );
+    const buttonSpan = React.createElement(
+        "span",
+        {
+            style: {
+                display: "block",
+                color: "#fff",
+                opacity: 0.5
+            }
+        },
+        "PO₩ER PO₩ER PO₩ER"
+    );
+    const button = React.createElement(
+        "button", // 변수 button의 요소(element)
+        { // button이 가지게 될 속성(property) - id, class, style, event listener 등
+            id: "sexy-button",
+            style: {
+                display: "block",
+                width: "180px",
+                padding: "10px",
+                backgroundColor: "#ff6347",
+                border: "none",
+                borderRadius: "5px",
+                borderSpacing: 0,
+                color: "#fff",
+                fontWeight: "bold"
+            },
+            onClick: () => console.log("I'm clicked!")
+        },
+        [ //content가 여러개일 경우 배열로 선언하여 넣어준다. 요소도 넣을 수 있다.
+            "Click me!",
+            buttonSpan
+        ]
+    );
+    const container = React.createElement(
+        "div",
+        {
+            class: "container"
+        },
+        [
+            h3,
+            button
+        ]
+    );
+    ReactDOM.render(container, root);
+</script>
+</html>
